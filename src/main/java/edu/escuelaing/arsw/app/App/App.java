@@ -6,17 +6,23 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Hello world!
- *
+ * Server Http, open port 35000
+ * @author AndresRamirez
  */
 public class App {
-    static ExecutorService executorService = Executors.newFixedThreadPool(10);
+    static ExecutorService executorService = Executors.newFixedThreadPool(13);
     static int counterConnections = 0;
+    static ServerSocket serverSocket = null;
 
+    /**
+     * Start Server http: port 35000
+     * @param args n/a
+     */
     public static void main( String[] args ) {
-        ServerSocket serverSocket = null;
         try{
-            serverSocket = new ServerSocket(35000);
+            if (serverSocket == null) {
+                serverSocket = new ServerSocket(35000);
+            }
             System.out.println("Servidor esperando solicitudes al puerto 35000");
             while(true){
                 Socket clientSocket = serverSocket.accept();
@@ -31,5 +37,4 @@ public class App {
             System.exit(1);
         }
     }
-
 }

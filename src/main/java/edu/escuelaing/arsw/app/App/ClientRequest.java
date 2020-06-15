@@ -12,6 +12,10 @@ import java.net.Socket;
 public class ClientRequest implements Runnable {
     private Socket clientSocket;
 
+    /**
+     * Constructor class clientRequest,
+     * @param clientSocket socket connection with new client
+     */
     public ClientRequest(Socket clientSocket) {
         this.clientSocket = clientSocket;
     }
