@@ -11,9 +11,10 @@ import java.util.concurrent.Executors;
  */
 public class App {
     static ExecutorService executorService = Executors.newFixedThreadPool(10);
-    public static void main( String[] args ) throws IOException {
-        ServerSocket serverSocket = null;
+    static int counterConnections = 0;
 
+    public static void main( String[] args ) {
+        ServerSocket serverSocket = null;
         try{
             serverSocket = new ServerSocket(35000);
             System.out.println("Servidor esperando solicitudes al puerto 35000");
@@ -22,6 +23,8 @@ public class App {
                 System.out.println("Nuevo cliente conectado");
                 ClientRequest clientRequest = new ClientRequest(clientSocket);
                 executorService.execute(clientRequest);
+                counterConnections++;
+                System.out.println(counterConnections);
             }
         } catch (IOException e){
             System.err.println("Could not listen on port: 35000");

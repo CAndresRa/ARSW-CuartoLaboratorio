@@ -40,7 +40,7 @@ public class ClientRequest implements Runnable {
             BrowserService browserService = new BrowserService(path);
             browserService.getFileBrowser(clientSocket);
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         } finally {
             try {
                 if (out != null) {
@@ -50,7 +50,7 @@ public class ClientRequest implements Runnable {
                     in.close();
                 clientSocket.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
         }
     }

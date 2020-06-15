@@ -28,6 +28,9 @@ public class BrowserService {
         if (filePath.contains(".css")){
             fileBrowser = new CssFile();
         }
+        if (filePath.contains(".js")){
+            fileBrowser = new JsFile();
+        }
     }
 
     /**
@@ -35,6 +38,11 @@ public class BrowserService {
      * @throws IOException because of the libraries used in the implementation of files
      */
     public void getFileBrowser(Socket clientSocket) throws IOException {
-        fileBrowser.getFile(filePath, clientSocket);
+        try {
+            fileBrowser.getFile(filePath, clientSocket);
+        } catch (java.lang.NullPointerException e){
+            System.out.println("Algun archivo no se encontro");
+        }
+
     }
 }
