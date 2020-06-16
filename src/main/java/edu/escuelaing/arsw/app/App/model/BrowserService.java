@@ -1,4 +1,6 @@
 package edu.escuelaing.arsw.app.App.model;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.Socket;
 
@@ -12,23 +14,28 @@ public class BrowserService {
      */
     public BrowserService(String path) {
         this.filePath = path;
-        if(filePath.contains(".html")){
-            fileBrowser = new HtmlFile();
-        }
-        if(filePath.contains(".png")){
-            fileBrowser = new PngFile();
-        }
-        if(filePath.contains(".jpg") || filePath.contains(".jpeg")){
-            fileBrowser = new JpgFile();
-        }
-        if(filePath.contains(".svg")){
-            fileBrowser = new SvgFile();
-        }
-        if (filePath.contains(".css")){
-            fileBrowser = new CssFile();
-        }
-        if (filePath.contains(".js")){
-            fileBrowser = new JsFile();
+        try {
+            new FileReader(path);
+            if(filePath.contains(".html")){
+                fileBrowser = new HtmlFile();
+            }
+            if(filePath.contains(".png")){
+                fileBrowser = new PngFile();
+            }
+            if(filePath.contains(".jpg") || filePath.contains(".jpeg")){
+                fileBrowser = new JpgFile();
+            }
+            if(filePath.contains(".svg")){
+                fileBrowser = new SvgFile();
+            }
+            if (filePath.contains(".css")){
+                fileBrowser = new CssFile();
+            }
+            if (filePath.contains(".js")){
+                fileBrowser = new JsFile();
+            }
+        } catch (FileNotFoundException e) {
+            fileBrowser = new NotFound();
         }
     }
 

@@ -41,9 +41,10 @@ public class ClientRequest implements Runnable {
             }
             String path = "src/main/resources/";
             path = path + header[1].substring(1);
+            System.out.println("PATH: " + path);
             BrowserService browserService = new BrowserService(path);
             browserService.getFileBrowser(clientSocket);
-        } catch (IOException e) {
+        } catch (Exception e) {
             //e.printStackTrace();
         } finally {
             try {

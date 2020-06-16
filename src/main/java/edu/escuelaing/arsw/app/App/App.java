@@ -19,9 +19,10 @@ public class App {
      * @param args n/a
      */
     public static void main( String[] args ) {
+        int port = getPort();
         try{
             if (serverSocket == null) {
-                serverSocket = new ServerSocket(35000);
+                serverSocket = new ServerSocket(port);
             }
             System.out.println("Servidor esperando solicitudes al puerto 35000");
             while(true){
@@ -36,5 +37,12 @@ public class App {
             System.err.println("Could not listen on port: 35000");
             System.exit(1);
         }
+    }
+    static int getPort() {
+        if (System.getenv("PORT") != null) {
+            return Integer.parseInt(System.getenv("PORT"));
+        }
+        return 35000;
+        //returns default port if heroku-port isn't set(i.e. on localhost)
     }
 }
