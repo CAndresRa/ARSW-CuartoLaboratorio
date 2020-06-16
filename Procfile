@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* edu.escuelaing.edu.arsw.app.App
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* edu.escuelaing.arsw.app.App.App
