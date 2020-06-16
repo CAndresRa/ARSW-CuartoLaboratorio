@@ -9,7 +9,7 @@ Para el desarrollo del proyecto se utilizo **Maven** como una herramienta para l
 
 Utilizar `mvn package` para la generacion del fichero .jar con los .class compilados.
 
-![Texto alternativo]()
+![](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/mvn%20package.png)
 
 Una vez realizado el `mvn package` el codigo estara listo para ser utilizado bajo la siguiente estructura.
 
@@ -19,7 +19,7 @@ Para ejecutar el programa se utilizara desde la terminal el siguiente comando en
  
 por ejemplo:
 
-![Texto alternativo]()
+![Texto alternativo](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/uso.png)
 
 Como se puede observar el servidor web inicia y se muestra un mensaje que indica que esta esuchando por el **puerto 35000**:
 
@@ -45,7 +45,9 @@ Algunos de los archivos de los que dispone el servidor son:
 
 Por ejemplo:
 
-![Texto alternativo]()
+![Texto alternativo](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/browser1.png)
+
+![Texto alternativo](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/browser2.png)
 
 Cuando el **PATH** ingresado por el usuario es incorrecto debido a que el archivo no existe se enviara un mensaje de error **404** como se muestra a continuacion:
 
@@ -56,9 +58,9 @@ Cuando el **PATH** ingresado por el usuario es incorrecto debido a que el archiv
 
 * Aplicación 
 
-![Texto alternativo]()
+![Texto alternativo](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/Diagrama.png)
 
-El diagrama muestra que la clase **App** recibe el argumento, en este caso se trata de la ruta del archivo al cual se le realizara el calculo correspondiente a la **media** y **desviación estandar**, la clase **App** crea una instancia de la clase **CalculateMeanAndDeviationService** cuya finalidad es la lectura del archivo encontrado y mediante los metodos **calculateMean** y **calculateStandardDeviation** envia una **MyLinkedList** que contiene los datos del archivo leido anteriormente, para ser utilizada por la interfaz ***Calculate*** que con el uso de polimorfismo obtendra el calculo correspondiente a la media o desviación estandar, esta estructura permitira posibles cambios que se deseen implementar como en el caso de que el usuario quiera obtener unicamente un valor y a su vez la extension del software para otros calculos.
+El diagrama muestra que la clase **Server** inicia la escucha del servidor por el puerto **35000**, la clase **Server** crea una instancia de la clase **ClientRequest** cuando un cliente realiza una solicitud al servidor cuya finalidad es la lectura de la peticion realizada por el cliente, determinando el **path del archivo solicitado** con el cual puede crear una instancia de la clase concreta **BrowserService** que se encuentra en la capacidad de identicar la extension del archivo solicitado para solicitarlo a la interfaz **BrowserFile** que puede manejar y responder archivos de extension **HTML, JS, CSS, PNG, JPG, JPEG, SVG** los cuales mostraran por medio del **clientSocket** el archivo correspondiente, de no encontrarlo mostrar un error **404 Not Found**.
 
 ## Pruebas 
 
@@ -70,11 +72,11 @@ Se han realizado un **total de 5 JUnit test** con el fin de garantizar que el se
 
 ### Pruebas implementadas
 
-![]()
+![](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/Screen%20Shot%202020-06-15%20at%207.40.32%20PM.png)
 
 ### Utilizando el comando de `mvn test`
 
-![]()
+![](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/mvn%20test.png)
 
 ### JMeter
 
@@ -88,7 +90,9 @@ Las pruebas anteriores resultaron satisfactorias, sin embargo para la prueba de 
 
 **La configuracion fue la siguiente:**
 
-![]()
+![](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/config1.png)
+
+![](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/CONFIG2.png)
 
 * `http://127.0.0.1:3500/index.html` 1500 usuarios en 1 segundo. resultados:
 
