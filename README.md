@@ -1,7 +1,7 @@
 # Web Server - Concurrente 
 ### Autor: Carlos Andrés Ramírez Torres
 ### Fecha: Lunes, 15 de Junio del 2020
-##### LOC/h: 1559/12 = 129.91 LOC/h
+##### LOC/h: 842/8 = 105.25 LOC/h
 
 ## Uso 
 
