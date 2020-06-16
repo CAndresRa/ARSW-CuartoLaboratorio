@@ -1,6 +1,6 @@
 # Web Server - Concurrente 
 ### Autor: Carlos Andrés Ramírez Torres
-### Fecha: Viernes, 5 de Junio del 2020
+### Fecha: Lunes, 15 de Junio del 2020
 ##### LOC/h: 1559/12 = 129.91 LOC/h
 
 ## Uso 
@@ -51,7 +51,7 @@ Por ejemplo:
 
 Cuando el **PATH** ingresado por el usuario es incorrecto debido a que el archivo no existe se enviara un mensaje de error **404** como se muestra a continuacion:
 
-![Texto alternativo]()
+![Texto alternativo](https://github.com/CAndresRa/ARSW-CuartoLaboratorio/blob/master/imgReadme/Error%20404.png)
 
 
 ## Diagrama
