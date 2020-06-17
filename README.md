@@ -3,6 +3,10 @@
 ### Fecha: Lunes, 15 de Junio del 2020
 ##### LOC/h: 842/8 = 105.25 LOC/h
 
+## Link a Heroku
+
+[Heroku](https://primerdespliegue.herokuapp.com/index.html)
+
 ## Uso 
 
 Para el desarrollo del proyecto se utilizo **Maven** como una herramienta para la construccion y gestion del mismo, el codigo fue desarrollado con el lenguaje de programación **Java**.
